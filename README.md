@@ -13,6 +13,6 @@ Python 3.7 or above. It might run on older versions but some commands will proba
 In bot directory:  
 `pip install -r requirements.txt`  
 Create **bottoken.py** file in **lib** directory and type in    
-`token = "twójtoken"`  
+`token = "yourtoken"`  
 If you can't get it to work on raspberry pi try:    
 `sudo apt-get install libatlas-base-dev`
