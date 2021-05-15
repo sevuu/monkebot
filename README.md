@@ -1,20 +1,18 @@
-# malpabot
-Bot do ogólnego użytku, którego zrobiłem bo chciałem sie nauczyć języka i dla zabawy. Dużo inside joke-ów więc niespecjalnie sie nadaje do użytku na innych serwerach.
-%help dla listy komend
+# monkebot
+Discord bot for general usage. Expect spaghetti code and a bit of untranslated commands.
+Basically a family friendly version of https://github.com/sevuu/malpabot
+
+%help for command list
 
 # invite link
 https://discord.com/oauth2/authorize?client_id=811696300285362207&scope=bot&permissions=8
 
-# instalacja
-Wymagany jest python 3.7 wzwyż, starsze powinny działać ale niektóre komendy mogą być zepsute. 
+# installation
+Python 3.7 or above. It might run on older versions but some commands will probably stop working properly. Try at your own risk. 
 
-W folderze z botem:  
+In bot directory:  
 `pip install -r requirements.txt`  
-Utwórz plik **bottoken.py** w folderze **lib** i wpisz  
-`token = "twójtoken"`  
-Jak coś nie działa na raspberry pi to to powinno pomóc:    
+Create **bottoken.py** file in **lib** directory and type in    
+`token = "yourtoken"`  
+If you can't get it to work on raspberry pi try:    
 `sudo apt-get install libatlas-base-dev`
-
-
-# additional notes
-to moje pierwsze "powazne" github repo dlatego chcialbym prosic o wyrozumialosc jak cos zle zrobie czy cos nie wiem
