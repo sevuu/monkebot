@@ -1,9 +1,6 @@
 import discord, random, asyncio, os
 from discord.ext import commands
-from hentai import Hentai, Format
 from lib import  caesarcipher, monkies, morsecode
-
-
 
 prefix = '%'
 client = commands.Bot(command_prefix = prefix)
@@ -13,10 +10,6 @@ class Fun(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @commands.command(brief="test")
-    async def test(self,ctx):
-        await ctx.send(f'gittest')
-
     @commands.command(brief="Message encrypted with Morse code.")
     async def morse(self,ctx,*,msg):
         await ctx.send(morsecode.morseEncrypt(msg))
@@ -25,44 +18,11 @@ class Fun(commands.Cog):
     async def morsedecrypt(self,ctx,*,msg):
         await ctx.send(morsecode.morseDecrypt(msg))
 
-    @commands.command(brief="Random nhentai doujin")
-    async def nhentai(self,ctx):    
-        FBI = True
-        while FBI:
-            id = random.randint(1,358481)   # Generating random nhentai ID. You may want to update the second value once in a while
-            doujin = Hentai(id)
-            tagi = [tag.name for tag in doujin.tag]
-            blacklist = ["lolicon","shotacon","rape","incest","scat"]   # blacklisted tags
-            check = any(item in tagi for item in blacklist)
-            if check is False:
-                embed=discord.Embed(title=doujin.title(Format.Pretty),url=f"https://nhentai.net/g/{id}/",description=f"#{id}",color=discord.Color.purple())
-                embed.set_thumbnail(url=doujin.image_urls[0])
-                embed.add_field(name="Tags", value=", ".join(tagi), inline=False)
-                await ctx.send(embed=embed)
-                FBI = False
-            else:
-                continue
-
-    # @commands.command(brief='"monkey" in a random language')
-    # #commenting it out for a while because i cba translating all of these languages
-    # async def rndmonkey(self,ctx):
-    #     malpy = monkies.malpiszony
-    #     mKeys = list(malpy.keys())
-    #     randomLang = mKeys[random.randint(0,len(mKeys)-1)]
-    #     randomLangMonky = malpy.get(randomLang)
-    #     embed=discord.Embed(title='Random monkey')
-    #     embed.add_field(name=randomLang, value=randomLangMonky, inline=False)
-    #     await ctx.send(embed=embed)
-
-    @commands.command(brief="My friend :)")
-    async def czechu(self,ctx):
-        await ctx.channel.send('<@327742627233398784>')
-
     @commands.command(brief="Video Game")
     async def leagueoflegends(self,ctx):
         await ctx.channel.send('League sucks.')
 
-    @commands.command(brief="Speaking cow wtf?", description='https://en.wikipedia.org/wiki/Cowsay')
+    @commands.command(brief="Talking cow wtf?", description='https://en.wikipedia.org/wiki/Cowsay')
     # You may need to download cowsay on your host machine in order to use this command
     # 'sudo apt install cowsay' if running on debian/ubuntu derivative
     # This command can be extremely dangerous so if you're using this bot on some bigger server you should comment it out
@@ -76,7 +36,7 @@ class Fun(commands.Cog):
         await ctx.send(str(facts[random.randint(0,len(facts)-1)]))
 
     @commands.command(brief="Do. not. beat. women.")
-    # It's an inside joke but I really like this command so I'll let it be
+    # It's an inside joke but I really like this command so I'll let it be. Modify it to your own needs
     async def zagusi(self,ctx):
         f = open('./datafiles/zagus1.txt')
         content = f.read()
@@ -142,7 +102,7 @@ class Fun(commands.Cog):
         await ctx.send('‎\n'*50)
 
     # @commands.command(brief=":tf:")
-    # # this command literally pings everyone, don't use this unless you're an asshole
+    # # this command literally pings everyone, don't use this unless you really hate everyone on your server
     # async def pong(self,ctx):
     #     await ctx.send(f"{ctx.message.guild.default_role}  <:tf:805707103628951592>")
 
