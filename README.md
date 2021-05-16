@@ -5,7 +5,7 @@ Basically a family friendly version of https://github.com/sevuu/malpabot
 %help for command list
 
 # invite link
-https://discord.com/oauth2/authorize?client_id=811696300285362207&scope=bot&permissions=8
+host it yourself im broke
 
 # installation
 Python 3.7 or above. It might run on older versions but some commands will probably stop working properly. Try at your own risk. 
